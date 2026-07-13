@@ -1,5 +1,6 @@
 package com.nofal.financeflowapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -26,15 +27,17 @@ public class User {
     private String password;
     private LocalDate createdAt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Transaction> transactions;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Budget> budgets;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<SavingGoal> savingGoals;
 
-
-
+    
 }

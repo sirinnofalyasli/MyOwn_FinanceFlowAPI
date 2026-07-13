@@ -29,9 +29,6 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    //yani bircok islem tek bir usera ait ya da
-    //bir user bircok transaction yani islem yapabilir
-
 
     @ManyToOne
     @JoinColumn(name = "category_id")

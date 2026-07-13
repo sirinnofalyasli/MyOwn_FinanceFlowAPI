@@ -1,5 +1,6 @@
 package com.nofal.financeflowapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class SavingGoal {
     private BigDecimal currentAmount;
     private LocalDate targetDate;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
